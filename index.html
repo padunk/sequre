@@ -10,6 +10,15 @@
     />
     <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="adsense-mobile.css" media="screen" />
+
+    <!-- Google AdSense Script - Replace with your actual AdSense account ID -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+      crossorigin="anonymous"
+    ></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
@@ -19,6 +28,33 @@
       <header>
         <h1>🔐 Secure QR Code Generator</h1>
         <p>Convert text to QR codes with AES-256 encryption</p>
+
+        <!-- Header Banner Ad (728x90 - Leaderboard) -->
+        <aside class="ad-container ad-header" aria-label="Advertisement">
+          <div class="ad-wrapper">
+            <!-- Google AdSense Banner Ad - Replace with your actual ad code -->
+            <ins
+              class="adsbygoogle ad-banner"
+              style="display: block"
+              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+              data-ad-slot="1234567890"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+
+            <!-- Fallback content for ad blockers -->
+            <div class="ad-fallback">
+              <p>🎯 Support our free service</p>
+              <p>
+                Consider disabling your ad blocker to help keep this tool free
+                for everyone!
+              </p>
+            </div>
+          </div>
+        </aside>
       </header>
 
       <main>
@@ -80,6 +116,34 @@
           </div>
         </section>
 
+        <!-- Sidebar/Rectangle Ad (300x250 - Medium Rectangle) -->
+        <aside class="ad-container ad-sidebar" aria-label="Advertisement">
+          <div class="ad-wrapper">
+            <!-- Google AdSense Rectangle Ad - Replace with your actual ad code -->
+            <ins
+              class="adsbygoogle ad-rectangle"
+              style="display: block"
+              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+              data-ad-slot="0987654321"
+              data-ad-format="rectangle"
+              data-ad-width="300"
+              data-ad-height="250"
+            ></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+
+            <!-- Fallback content for ad blockers -->
+            <div class="ad-fallback">
+              <div class="ad-placeholder">
+                <h4>💡 Did you know?</h4>
+                <p>QR codes can store up to 4,296 alphanumeric characters!</p>
+                <p><small>Enable ads to support this free tool</small></p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
         <!-- QR Code Display Section -->
         <section class="qr-section">
           <div class="qr-container" id="qr-container" style="display: none">
@@ -138,6 +202,35 @@
             </div>
           </div>
         </section>
+
+        <!-- Footer Banner Ad (728x90 - Leaderboard) -->
+        <aside class="ad-container ad-footer" aria-label="Advertisement">
+          <div class="ad-wrapper">
+            <!-- Google AdSense Footer Banner Ad - Replace with your actual ad code -->
+            <ins
+              class="adsbygoogle ad-banner"
+              style="display: block"
+              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+              data-ad-slot="1122334455"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+
+            <!-- Fallback content for ad blockers -->
+            <div class="ad-fallback">
+              <div class="ad-placeholder">
+                <p>🔒 Enjoying our secure QR generator?</p>
+                <p>
+                  Help us keep it free by allowing ads or
+                  <a href="#" class="donation-link">making a small donation</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
       </main>
 
       <!-- Error/Success Messages -->
@@ -145,5 +238,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="adsense-manager.js"></script>
   </body>
 </html>

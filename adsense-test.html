@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AdSense Integration Test - Secure QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="adsense-mobile.css" />
+    <style>
+      .test-section {
+        background: #f8f9fa;
+        padding: 30px;
+        margin: 20px auto;
+        border-radius: 10px;
+        max-width: 800px;
+      }
+
+      .test-result {
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border-left: 4px solid #28a745;
+        background: #d4edda;
+      }
+
+      .test-warning {
+        border-left-color: #ffc107;
+        background: #fff3cd;
+      }
+
+      .test-error {
+        border-left-color: #dc3545;
+        background: #f8d7da;
+      }
+
+      .test-button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+      .test-button:hover {
+        background: #0056b3;
+      }
+
+      .metrics-display {
+        background: #e3f2fd;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 15px 0;
+        font-family: monospace;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 20px;
+        text-decoration: none;
+        color: #007bff;
+        font-weight: 500;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a href="index.html" class="back-link">← Back to QR Generator</a>
+        <h1>🧪 AdSense Integration Test Page</h1>
+        <p>Test and verify Google AdSense implementation</p>
+      </header>
+
+      <main>
+        <section class="test-section">
+          <h2>AdSense Integration Status</h2>
+          <div id="adsense-status">
+            <div class="test-result test-warning">
+              <strong>⚠️ Setup Required:</strong> Replace placeholder AdSense
+              codes with your actual publisher ID and ad slot IDs.
+            </div>
+          </div>
+
+          <button class="test-button" onclick="checkAdSenseScript()">
+            Check AdSense Script
+          </button>
+          <button class="test-button" onclick="testAdBlockerDetection()">
+            Test Ad Blocker Detection
+          </button>
+          <button class="test-button" onclick="showAdMetrics()">
+            Show Ad Metrics
+          </button>
+          <button class="test-button" onclick="runComplianceCheck()">
+            Check Policy Compliance
+          </button>
+        </section>
+
+        <!-- Test Ad Containers -->
+        <section class="test-section">
+          <h2>Test Ad Placements</h2>
+          <p>
+            The following ad containers are for testing purposes only. In
+            production, replace with actual AdSense codes.
+          </p>
+
+          <!-- Test Header Banner -->
+          <aside class="ad-container ad-header" aria-label="Test Advertisement">
+            <div class="ad-wrapper">
+              <ins
+                class="adsbygoogle ad-banner"
+                style="display: block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                data-ad-slot="1234567890"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              ></ins>
+
+              <div class="ad-fallback">
+                <p>🎯 Test Header Banner (728x90)</p>
+                <p>This is a placeholder for testing</p>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Test Rectangle Ad -->
+          <aside
+            class="ad-container ad-sidebar"
+            aria-label="Test Advertisement"
+          >
+            <div class="ad-wrapper">
+              <ins
+                class="adsbygoogle ad-rectangle"
+                style="display: block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                data-ad-slot="0987654321"
+                data-ad-format="rectangle"
+                data-ad-width="300"
+                data-ad-height="250"
+              ></ins>
+
+              <div class="ad-fallback">
+                <div class="ad-placeholder">
+                  <h4>📱 Test Rectangle Ad (300x250)</h4>
+                  <p>Medium rectangle test placement</p>
+                  <p><small>Fallback content showing</small></p>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Test Footer Banner -->
+          <aside class="ad-container ad-footer" aria-label="Test Advertisement">
+            <div class="ad-wrapper">
+              <ins
+                class="adsbygoogle ad-banner"
+                style="display: block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                data-ad-slot="1122334455"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              ></ins>
+
+              <div class="ad-fallback">
+                <div class="ad-placeholder">
+                  <p>🔄 Test Footer Banner (728x90)</p>
+                  <p>Footer placement test area</p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <!-- Test Results Display -->
+        <section class="test-section">
+          <h2>Test Results</h2>
+          <div id="test-results">
+            <p>Click the test buttons above to see results here.</p>
+          </div>
+
+          <div
+            id="metrics-display"
+            class="metrics-display"
+            style="display: none"
+          >
+            <h3>Ad Performance Metrics</h3>
+            <pre id="metrics-content"></pre>
+          </div>
+        </section>
+
+        <!-- Implementation Checklist -->
+        <section class="test-section">
+          <h2>Implementation Checklist</h2>
+          <div class="checklist">
+            <div class="test-result test-warning">
+              <strong>Before Going Live:</strong>
+              <ul style="margin: 10px 0 0 20px">
+                <li>
+                  ✅ Replace ca-pub-XXXXXXXXXXXXXXXX with your AdSense Publisher
+                  ID
+                </li>
+                <li>
+                  ✅ Replace ad slot IDs (1234567890, etc.) with actual slot IDs
+                </li>
+                <li>✅ Test on mobile and desktop devices</li>
+                <li>✅ Verify ad blocker detection works</li>
+                <li>✅ Check Core Web Vitals performance</li>
+                <li>✅ Ensure policy compliance</li>
+                <li>✅ Test fallback content display</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Setup Instructions -->
+        <section class="test-section">
+          <h2>Quick Setup Instructions</h2>
+          <ol>
+            <li>
+              <strong>Get AdSense Account:</strong> Apply at
+              <a href="https://www.google.com/adsense/" target="_blank"
+                >google.com/adsense</a
+              >
+            </li>
+            <li>
+              <strong>Create Ad Units:</strong> Create banner and rectangle ad
+              units in your AdSense dashboard
+            </li>
+            <li>
+              <strong>Update Code:</strong> Replace all placeholder codes in
+              index.html with your actual codes
+            </li>
+            <li>
+              <strong>Test Implementation:</strong> Use this test page to verify
+              everything works
+            </li>
+            <li>
+              <strong>Monitor Performance:</strong> Check AdSense dashboard for
+              metrics after going live
+            </li>
+          </ol>
+
+          <div class="test-result">
+            <strong>📖 Full Documentation:</strong> See
+            <code>ADSENSE-SETUP.md</code> for complete setup instructions.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="adsense-manager.js"></script>
+    <script>
+      // Test Functions
+      function checkAdSenseScript() {
+        const results = document.getElementById("test-results");
+        let html = "<h3>AdSense Script Check</h3>";
+
+        if (typeof window.adsbygoogle !== "undefined") {
+          html +=
+            '<div class="test-result">✅ AdSense script loaded successfully</div>';
+        } else {
+          html +=
+            '<div class="test-result test-error">❌ AdSense script not loaded or blocked</div>';
+        }
+
+        // Check if script tag exists
+        const scriptTags = document.querySelectorAll(
+          'script[src*="adsbygoogle.js"]'
+        );
+        if (scriptTags.length > 0) {
+          html +=
+            '<div class="test-result">✅ AdSense script tag found in HTML</div>';
+        } else {
+          html +=
+            '<div class="test-result test-error">❌ AdSense script tag not found</div>';
+        }
+
+        results.innerHTML = html;
+      }
+
+      function testAdBlockerDetection() {
+        const results = document.getElementById("test-results");
+        let html = "<h3>Ad Blocker Detection Test</h3>";
+
+        if (window.adSenseManager) {
+          const blocked = window.adSenseManager.adBlockDetected;
+          if (blocked) {
+            html +=
+              '<div class="test-result test-warning">⚠️ Ad blocker detected - fallback content should be visible</div>';
+          } else {
+            html += '<div class="test-result">✅ No ad blocker detected</div>';
+          }
+        } else {
+          html +=
+            '<div class="test-result test-error">❌ AdSense manager not initialized</div>';
+        }
+
+        results.innerHTML = html;
+      }
+
+      function showAdMetrics() {
+        const metricsDisplay = document.getElementById("metrics-display");
+        const metricsContent = document.getElementById("metrics-content");
+
+        if (window.adSenseManager) {
+          const metrics = window.adSenseManager.getAdMetrics();
+          metricsContent.textContent = JSON.stringify(metrics, null, 2);
+          metricsDisplay.style.display = "block";
+        } else {
+          metricsContent.textContent = "AdSense manager not available";
+          metricsDisplay.style.display = "block";
+        }
+      }
+
+      function runComplianceCheck() {
+        const results = document.getElementById("test-results");
+        let html = "<h3>Policy Compliance Check</h3>";
+
+        if (window.AdSensePolicyCompliance) {
+          const issues = window.AdSensePolicyCompliance.checkPageCompliance();
+
+          if (issues.length === 0) {
+            html +=
+              '<div class="test-result">✅ No policy compliance issues found</div>';
+          } else {
+            html +=
+              '<div class="test-result test-warning">⚠️ Policy issues found:</div>';
+            issues.forEach((issue) => {
+              html += `<div class="test-result test-warning">• ${issue}</div>`;
+            });
+          }
+        } else {
+          html +=
+            '<div class="test-result test-error">❌ Compliance checker not available</div>';
+        }
+
+        results.innerHTML = html;
+      }
+
+      // Auto-run basic checks when page loads
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          checkAdSenseScript();
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
