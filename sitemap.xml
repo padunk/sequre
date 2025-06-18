@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    
+    <!-- Main QR Generator Page -->
+    <url>
+        <loc>https://secure-qr-generator.com/</loc>
+        <lastmod>2025-06-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <mobile:mobile/>
+    </url>
+    
+    <!-- Bulk QR Generator -->
+    <url>
+        <loc>https://secure-qr-generator.com/bulk-qr-generator</loc>
+        <lastmod>2025-06-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <mobile:mobile/>
+    </url>
+    
+    <!-- QR Code Analytics -->
+    <url>
+        <loc>https://secure-qr-generator.com/qr-code-analytics</loc>
+        <lastmod>2025-06-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <mobile:mobile/>
+    </url>
+    
+    <!-- vCard QR Generator -->
+    <url>
+        <loc>https://secure-qr-generator.com/vcard-qr-generator</loc>
+        <lastmod>2025-06-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <mobile:mobile/>
+    </url>
+    
+    <!-- WiFi QR Generator -->
+    <url>
+        <loc>https://secure-qr-generator.com/wifi-qr-generator</loc>
+        <lastmod>2025-06-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <mobile:mobile/>
+    </url>
+    
+    <!-- Legal and Info Pages -->
+    <url>
+        <loc>https://secure-qr-generator.com/privacy-policy</loc>
+        <lastmod>2025-06-18</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+        <mobile:mobile/>
+    </url>
+    
+    <url>
+        <loc>https://secure-qr-generator.com/terms-of-service</loc>
+        <lastmod>2025-06-18</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+        <mobile:mobile/>
+    </url>
+    
+    <url>
+        <loc>https://secure-qr-generator.com/security</loc>
+        <lastmod>2025-06-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <mobile:mobile/>
+    </url>
+    
+    <url>
+        <loc>https://secure-qr-generator.com/contact</loc>
+        <lastmod>2025-06-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+        <mobile:mobile/>
+    </url>
+    
+</urlset>

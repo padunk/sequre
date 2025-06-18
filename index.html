@@ -1,32 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/WebApplication">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Secure QR Code Generator</title>
+
+    <!-- Primary Meta Tags -->
+    <title>
+      Free Secure QR Code Generator with AES-256 Encryption | QR Creator
+    </title>
+    <meta
+      name="title"
+      content="Free Secure QR Code Generator with AES-256 Encryption | QR Creator"
+    />
     <meta
       name="description"
-      content="Convert text to QR codes with AES-256 encryption capabilities"
+      content="Create secure QR codes online with military-grade AES-256 encryption. Free QR code generator with password protection, high-resolution output, and instant download. No registration required."
     />
+    <meta
+      name="keywords"
+      content="QR code generator, secure QR code, encrypted QR code, AES-256 encryption, free QR maker, password protected QR, QR code creator, barcode generator"
+    />
+    <meta name="author" content="Secure QR Generator" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://secure-qr-generator.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://secure-qr-generator.com/" />
+    <meta
+      property="og:title"
+      content="Free Secure QR Code Generator with AES-256 Encryption"
+    />
+    <meta
+      property="og:description"
+      content="Create secure QR codes online with military-grade AES-256 encryption. Free QR code generator with password protection and high-resolution output."
+    />
+    <meta
+      property="og:image"
+      content="https://secure-qr-generator.com/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Secure QR Generator" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://secure-qr-generator.com/" />
+    <meta
+      property="twitter:title"
+      content="Free Secure QR Code Generator with AES-256 Encryption"
+    />
+    <meta
+      property="twitter:description"
+      content="Create secure QR codes online with military-grade AES-256 encryption. Free QR code generator with password protection and high-resolution output."
+    />
+    <meta
+      property="twitter:image"
+      content="https://secure-qr-generator.com/twitter-image.jpg"
+    />
+
+    <!-- Schema.org markup for WebApplication -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Secure QR Code Generator",
+        "url": "https://secure-qr-generator.com/",
+        "description": "Free online QR code generator with AES-256 encryption for creating secure, password-protected QR codes",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "AES-256 Encryption",
+          "High-resolution QR codes",
+          "Password protection",
+          "Instant download",
+          "Mobile responsive",
+          "No registration required"
+        ],
+        "screenshot": "https://secure-qr-generator.com/screenshot.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "Secure QR Generator"
+        }
+      }
+    </script>
+
+    <!-- PWA and Icons -->
     <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style" />
+    <link rel="preload" href="script.js" as="script" />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+
+    <!-- External Scripts with integrity checks -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"
+      integrity="sha512-FQqochzMy2zKoQeDgCl3Q4Y0G3GqQ6vLOo9QaBaHafqYGbXfZGl1d0UQZKM/W4ZBfWLZvK5zJz0h9Q4Kj7Wqg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+      integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"
+      integrity="sha512-dxLEqelbOBy3O8QYCo91NLdvoNO8Mqb+hnLjULklQxNX0HdN3uihGmWK1MJyEJ5iP1P1YaZhvfUWS2bQNjdwdg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
     <div class="container">
-      <header>
-        <h1>🔐 Secure QR Code Generator</h1>
-        <p>Convert text to QR codes with AES-256 encryption</p>
+      <header role="banner">
+        <h1 itemprop="name">🔐 Secure QR Code Generator</h1>
+        <p itemprop="description">
+          Create secure QR codes online with military-grade AES-256 encryption
+          technology
+        </p>
+
+        <!-- Breadcrumb navigation -->
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+          <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li
+              itemprop="itemListElement"
+              itemscope
+              itemtype="https://schema.org/ListItem"
+            >
+              <a itemprop="item" href="/">
+                <span itemprop="name">Home</span>
+              </a>
+              <meta itemprop="position" content="1" />
+            </li>
+            <li
+              itemprop="itemListElement"
+              itemscope
+              itemtype="https://schema.org/ListItem"
+            >
+              <span itemprop="name">QR Code Generator</span>
+              <meta itemprop="position" content="2" />
+            </li>
+          </ol>
+        </nav>
       </header>
 
-      <main>
-        <!-- Text Input Section -->
-        <section class="input-section">
+      <main id="main-content" role="main" itemprop="mainContentOfPage">
+        <!-- Introduction Section -->
+        <section class="intro-section" aria-labelledby="intro-heading">
+          <h2 id="intro-heading">
+            Free Online QR Code Generator with Advanced Security
+          </h2>
+          <p>
+            Generate high-quality QR codes instantly with our free online QR
+            code generator. Add password protection using AES-256 encryption to
+            secure your sensitive information. Perfect for businesses, personal
+            use, and secure data sharing.
+          </p>
+
+          <div class="features-grid">
+            <div class="feature-item">
+              <h3>🔒 Military-Grade Encryption</h3>
+              <p>
+                Protect your QR codes with AES-256 encryption, the same standard
+                used by governments and financial institutions worldwide.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h3>📱 High-Resolution Output</h3>
+              <p>
+                Generate crisp, clear QR codes at 400x400 pixels with error
+                correction level H for maximum scanning reliability.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h3>🚀 Instant & Free</h3>
+              <p>
+                Create unlimited QR codes instantly without registration.
+                Download high-quality PNG files immediately.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- QR Code Generator Section -->
+        <section class="input-section" aria-labelledby="generator-heading">
+          <h2 id="generator-heading">Create Your Secure QR Code</h2>
+
           <div class="form-group">
             <label for="text-input"
-              >Enter text to convert (max 1000 characters):</label
+              >Enter text to convert into QR code (maximum 1000
+              characters):</label
             >
             <textarea
               id="text-input"
@@ -81,28 +262,54 @@
         </section>
 
         <!-- QR Code Display Section -->
-        <section class="qr-section">
+        <section class="qr-section" aria-labelledby="qr-display-heading">
           <div class="qr-container" id="qr-container" style="display: none">
-            <h3>Generated QR Code</h3>
+            <h3 id="qr-display-heading">Your Generated QR Code</h3>
             <div class="qr-display">
-              <canvas id="qr-canvas"></canvas>
+              <canvas
+                id="qr-canvas"
+                aria-label="Generated QR code image"
+              ></canvas>
             </div>
             <div class="qr-info" id="qr-info"></div>
-            <button id="download-btn" class="btn btn-primary">
+            <button
+              id="download-btn"
+              class="btn btn-primary"
+              title="Download QR code as PNG image"
+            >
               Download QR Code
             </button>
           </div>
         </section>
 
         <!-- QR Code Scanner Section -->
-        <section class="scanner-section">
-          <h3>Decrypt QR Code</h3>
+        <section class="scanner-section" aria-labelledby="scanner-heading">
+          <h3 id="scanner-heading">Decrypt and Scan QR Codes</h3>
+          <p>
+            Upload an encrypted QR code image to decrypt and view its contents.
+            Supports all major image formats including PNG, JPG, and WEBP.
+          </p>
+
           <div class="scanner-container">
-            <div class="upload-area" id="upload-area">
+            <div
+              class="upload-area"
+              id="upload-area"
+              role="button"
+              tabindex="0"
+              aria-describedby="upload-instructions"
+            >
               <div class="upload-content">
-                <div class="upload-icon">📷</div>
-                <p>Click to upload QR code image or drag & drop</p>
-                <input type="file" id="qr-upload" accept="image/*" hidden />
+                <div class="upload-icon" aria-hidden="true">📷</div>
+                <p id="upload-instructions">
+                  Click to upload QR code image or drag & drop
+                </p>
+                <input
+                  type="file"
+                  id="qr-upload"
+                  accept="image/*"
+                  hidden
+                  aria-label="Upload QR code image file"
+                />
               </div>
             </div>
 
@@ -112,15 +319,24 @@
               style="display: none"
             >
               <div class="form-group">
-                <label for="decryption-key">Decryption Key:</label>
+                <label for="decryption-key">Enter Decryption Key:</label>
                 <input
                   type="password"
                   id="decryption-key"
-                  placeholder="Enter decryption key"
+                  placeholder="Enter the password used to encrypt this QR code"
                   autocomplete="off"
+                  aria-describedby="decryption-help"
                 />
+                <small id="decryption-help"
+                  >This should be the same key used when creating the encrypted
+                  QR code</small
+                >
               </div>
-              <button id="decrypt-btn" class="btn btn-primary">
+              <button
+                id="decrypt-btn"
+                class="btn btn-primary"
+                title="Decrypt the uploaded QR code"
+              >
                 Decrypt Content
               </button>
             </div>
@@ -131,17 +347,256 @@
               style="display: none"
             >
               <h4>Decrypted Content:</h4>
-              <div class="result-text" id="result-text"></div>
-              <button id="copy-result-btn" class="btn btn-secondary">
+              <div
+                class="result-text"
+                id="result-text"
+                role="region"
+                aria-live="polite"
+              ></div>
+              <button
+                id="copy-result-btn"
+                class="btn btn-secondary"
+                title="Copy decrypted text to clipboard"
+              >
                 Copy to Clipboard
               </button>
             </div>
           </div>
         </section>
+
+        <!-- How to Use Section -->
+        <section class="how-to-section" aria-labelledby="howto-heading">
+          <h2 id="howto-heading">How to Create Secure QR Codes</h2>
+
+          <div class="steps-container">
+            <article class="step-item">
+              <h3>Step 1: Enter Your Text</h3>
+              <p>
+                Type or paste up to 1000 characters of text into the input
+                field. This can be URLs, contact information, WiFi passwords, or
+                any text you want to encode.
+              </p>
+            </article>
+
+            <article class="step-item">
+              <h3>Step 2: Enable Encryption (Optional)</h3>
+              <p>
+                For sensitive information, enable AES-256 encryption. You can
+                provide your own password or let the system generate a secure
+                key automatically.
+              </p>
+            </article>
+
+            <article class="step-item">
+              <h3>Step 3: Generate & Download</h3>
+              <p>
+                Click "Generate QR Code" to create your high-resolution QR code.
+                Download it instantly as a PNG file for printing or digital
+                sharing.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section
+          class="faq-section"
+          aria-labelledby="faq-heading"
+          itemscope
+          itemtype="https://schema.org/FAQPage"
+        >
+          <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+          <div class="faq-container">
+            <article
+              class="faq-item"
+              itemscope
+              itemprop="mainEntity"
+              itemtype="https://schema.org/Question"
+            >
+              <h3 itemprop="name">
+                What is AES-256 encryption and why should I use it?
+              </h3>
+              <div
+                itemscope
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <p itemprop="text">
+                  AES-256 is a military-grade encryption standard used by
+                  governments and banks worldwide. It protects your QR code
+                  content from unauthorized access, making it perfect for
+                  sensitive information like passwords, private messages, or
+                  confidential data.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="faq-item"
+              itemscope
+              itemprop="mainEntity"
+              itemtype="https://schema.org/Question"
+            >
+              <h3 itemprop="name">Are my QR codes stored on your servers?</h3>
+              <div
+                itemscope
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <p itemprop="text">
+                  No, absolutely not. All QR code generation and encryption
+                  happens entirely in your browser. No data is ever sent to our
+                  servers or stored anywhere. Your privacy and security are
+                  completely protected.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="faq-item"
+              itemscope
+              itemprop="mainEntity"
+              itemtype="https://schema.org/Question"
+            >
+              <h3 itemprop="name">What happens if I lose my encryption key?</h3>
+              <div
+                itemscope
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <p itemprop="text">
+                  Encryption keys cannot be recovered if lost. This is by design
+                  for maximum security. Always save your encryption key in a
+                  secure location before downloading your encrypted QR code.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="faq-item"
+              itemscope
+              itemprop="mainEntity"
+              itemtype="https://schema.org/Question"
+            >
+              <h3 itemprop="name">
+                What file formats do you support for QR code images?
+              </h3>
+              <div
+                itemscope
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <p itemprop="text">
+                  Our QR code scanner supports all major image formats including
+                  PNG, JPG, JPEG, WEBP, and GIF. For best results, use
+                  high-contrast images with clear QR code visibility.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Related Tools Section -->
+        <!-- <section
+          class="related-tools-section"
+          aria-labelledby="related-heading"
+        >
+          <h2 id="related-heading">Related QR Code Tools</h2>
+          <p>
+            Explore our other free online tools for creating and managing QR
+            codes:
+          </p>
+
+          <nav class="tools-grid" aria-label="Related tools navigation">
+            <a
+              href="/bulk-qr-generator"
+              class="tool-link"
+              title="Generate multiple QR codes at once"
+            >
+              <h3>Bulk QR Generator</h3>
+              <p>Create multiple QR codes from CSV or text lists</p>
+            </a>
+            <a
+              href="/qr-code-analytics"
+              class="tool-link"
+              title="Track QR code scans and analytics"
+            >
+              <h3>QR Analytics</h3>
+              <p>Track and analyze QR code scan statistics</p>
+            </a>
+            <a
+              href="/vcard-qr-generator"
+              class="tool-link"
+              title="Create contact card QR codes"
+            >
+              <h3>vCard QR Generator</h3>
+              <p>Generate QR codes for contact information</p>
+            </a>
+            <a
+              href="/wifi-qr-generator"
+              class="tool-link"
+              title="Create WiFi password QR codes"
+            >
+              <h3>WiFi QR Generator</h3>
+              <p>Create QR codes for WiFi network access</p>
+            </a>
+          </nav>
+        </section> -->
       </main>
 
+      <!-- Footer -->
+      <footer role="contentinfo" class="site-footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Secure QR Generator</h3>
+            <p>
+              The most secure and reliable free QR code generator online. Create
+              encrypted QR codes with military-grade security.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <nav aria-label="Footer navigation">
+              <ul>
+                <li>
+                  <a href="/privacy-policy" title="Read our privacy policy"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li><a href="/contact" title="Contact us">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="footer-section">
+            <h4>Features</h4>
+            <ul>
+              <li>AES-256 Encryption</li>
+              <li>High-Resolution Output</li>
+              <li>No Registration Required</li>
+              <li>Completely Free</li>
+              <li>Mobile Responsive</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Secure QR Generator. All rights reserved. |
+            <a href="/sitemap.xml">Sitemap</a>
+          </p>
+        </div>
+      </footer>
+
       <!-- Error/Success Messages -->
-      <div class="message-container" id="message-container"></div>
+      <div
+        class="message-container"
+        id="message-container"
+        role="alert"
+        aria-live="assertive"
+      ></div>
     </div>
 
     <script src="script.js"></script>
