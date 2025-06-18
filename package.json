@@ -1,0 +1,37 @@
+{
+  "name": "secure-qr-generator",
+  "version": "1.0.0",
+  "description": "A secure web application for converting text to QR codes with AES-256 encryption capabilities",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "test": "open test.html"
+  },
+  "keywords": [
+    "qr-code",
+    "encryption",
+    "aes-256",
+    "security",
+    "javascript",
+    "web-app"
+  ],
+  "author": "GitHub Copilot",
+  "license": "MIT",
+  "homepage": "https://github.com/username/secure-qr-generator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/secure-qr-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/username/secure-qr-generator/issues"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

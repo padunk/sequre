@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure QR Code Generator</title>
+    <meta
+      name="description"
+      content="Convert text to QR codes with AES-256 encryption capabilities"
+    />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🔐 Secure QR Code Generator</h1>
+        <p>Convert text to QR codes with AES-256 encryption</p>
+      </header>
+
+      <main>
+        <!-- Text Input Section -->
+        <section class="input-section">
+          <div class="form-group">
+            <label for="text-input"
+              >Enter text to convert (max 1000 characters):</label
+            >
+            <textarea
+              id="text-input"
+              placeholder="Enter your text here..."
+              maxlength="1000"
+              rows="6"
+            ></textarea>
+            <div class="char-counter">
+              <span id="char-count">0</span> / 1000 characters
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-container">
+              <input type="checkbox" id="encrypt-toggle" />
+              <span class="checkmark"></span>
+              Enable AES-256 Encryption
+            </label>
+            <div class="encryption-status" id="encryption-status">
+              <span class="status-indicator" id="status-indicator">🔓</span>
+              <span id="status-text">Encryption disabled</span>
+            </div>
+          </div>
+
+          <div
+            class="form-group encryption-fields"
+            id="encryption-fields"
+            style="display: none"
+          >
+            <label for="encryption-key"
+              >Encryption Key (optional - leave blank for
+              auto-generation):</label
+            >
+            <input
+              type="password"
+              id="encryption-key"
+              placeholder="Enter encryption key or leave blank for auto-generation"
+              autocomplete="off"
+            />
+            <small
+              >If left blank, a secure key will be generated
+              automatically</small
+            >
+          </div>
+
+          <div class="button-group">
+            <button id="generate-btn" class="btn btn-primary">
+              Generate QR Code
+            </button>
+            <button id="clear-btn" class="btn btn-secondary">Clear All</button>
+          </div>
+        </section>
+
+        <!-- QR Code Display Section -->
+        <section class="qr-section">
+          <div class="qr-container" id="qr-container" style="display: none">
+            <h3>Generated QR Code</h3>
+            <div class="qr-display">
+              <canvas id="qr-canvas"></canvas>
+            </div>
+            <div class="qr-info" id="qr-info"></div>
+            <button id="download-btn" class="btn btn-primary">
+              Download QR Code
+            </button>
+          </div>
+        </section>
+
+        <!-- QR Code Scanner Section -->
+        <section class="scanner-section">
+          <h3>Decrypt QR Code</h3>
+          <div class="scanner-container">
+            <div class="upload-area" id="upload-area">
+              <div class="upload-content">
+                <div class="upload-icon">📷</div>
+                <p>Click to upload QR code image or drag & drop</p>
+                <input type="file" id="qr-upload" accept="image/*" hidden />
+              </div>
+            </div>
+
+            <div
+              class="decryption-fields"
+              id="decryption-fields"
+              style="display: none"
+            >
+              <div class="form-group">
+                <label for="decryption-key">Decryption Key:</label>
+                <input
+                  type="password"
+                  id="decryption-key"
+                  placeholder="Enter decryption key"
+                  autocomplete="off"
+                />
+              </div>
+              <button id="decrypt-btn" class="btn btn-primary">
+                Decrypt Content
+              </button>
+            </div>
+
+            <div
+              class="result-container"
+              id="result-container"
+              style="display: none"
+            >
+              <h4>Decrypted Content:</h4>
+              <div class="result-text" id="result-text"></div>
+              <button id="copy-result-btn" class="btn btn-secondary">
+                Copy to Clipboard
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Error/Success Messages -->
+      <div class="message-container" id="message-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
