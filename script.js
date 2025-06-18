@@ -1,5 +1,6 @@
 // Secure QR Code Generator with AES-256 Encryption
-// Author: GitHub Copilot
+// Idea: Abraham A. Agung
+// Writer: GitHub Copilot
 // License: MIT
 
 class SecureQRGenerator {

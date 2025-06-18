@@ -16,15 +16,15 @@
     "javascript",
     "web-app"
   ],
-  "author": "GitHub Copilot",
+  "author": "Abraham A. Agung",
   "license": "MIT",
-  "homepage": "https://github.com/username/secure-qr-generator",
+  "homepage": "https://github.com/padunk/sequre",
   "repository": {
     "type": "git",
-    "url": "https://github.com/username/secure-qr-generator.git"
+    "url": "https://github.com/padunk/sequre.git"
   },
   "bugs": {
-    "url": "https://github.com/username/secure-qr-generator/issues"
+    "url": "https://github.com/padunk/sequre/issues"
   },
   "devDependencies": {
     "http-server": "^14.1.1"
