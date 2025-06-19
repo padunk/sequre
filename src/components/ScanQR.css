@@ -1,0 +1,205 @@
+.scan-qr {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.upload-area {
+  border: 3px dashed #cbd5e0;
+  border-radius: 15px;
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f7fafc;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.upload-area:hover {
+  border-color: #5a67d8;
+  background: #edf2f7;
+  transform: translateY(-2px);
+}
+
+.upload-area.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.upload-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.upload-content p {
+  margin: 0;
+  color: #718096;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #5a67d8;
+}
+
+.scan-result {
+  background: #f7fafc;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-top: 2rem;
+}
+
+.scan-result h3 {
+  margin: 0 0 1rem 0;
+  color: #4a5568;
+  font-size: 1.5rem;
+}
+
+.scan-result h4 {
+  margin: 1.5rem 0 1rem 0;
+  color: #4a5568;
+  font-size: 1.2rem;
+}
+
+.scanned-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.encrypted-indicator {
+  color: #e53e3e;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.content-text {
+  color: #2d3748;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  background: #edf2f7;
+  padding: 1rem;
+  border-radius: 8px;
+  word-break: break-all;
+  white-space: pre-wrap;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.decryption-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.decryption-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.decrypt-input-group {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.decrypt-input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.decrypt-input:focus {
+  outline: none;
+  border-color: #5a67d8;
+  box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.1);
+}
+
+.decrypted-content {
+  background: #e6fffa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid #38b2ac;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.error-message {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .upload-area {
+    padding: 2rem 1rem;
+  }
+
+  .upload-icon {
+    font-size: 2rem;
+  }
+
+  .decrypt-input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .scan-result {
+    padding: 1.5rem;
+  }
+
+  .content-text {
+    font-size: 0.8rem;
+  }
+}
